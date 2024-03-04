@@ -1,0 +1,41 @@
+.shopListContainer {
+    width           : 500px;
+    min-height      : 600px;
+    max-height      : 700px;
+    background-color: rgb(216, 222, 228);
+    padding         : 30px;
+    border-radius   : 10px;
+}
+
+.shopList {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+    list-style     : none;
+}
+
+.shopListItem {
+    cursor       : pointer;
+    padding      : 20px;
+    font-size    : 20px;
+    border       : 1px solid black;
+    width        : 100%;
+    text-align   : center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.shopListItemSelected {
+    background-color: rgb(185, 189, 193);
+}
+
+.shopListItem:hover {
+    background-color: rgb(185, 189, 193);
+}
+
+.header {
+    font-size    : 25px;
+    text-align   : center;
+    margin-bottom: 20px;
+}
