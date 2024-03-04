@@ -11,7 +11,7 @@ const ShoppingCard = ({ order, setOrder }) => {
   const [loading, setLoading] = useState(false);
 
   const editCart = useCallback((product, count) => {
-    fetch('http://localhost:3001/api/order/edit-cart', {
+    fetch('https://react-pharmacy-2.onrender.com/api/order/edit-cart', {
       method: "PATCH",
       body: JSON.stringify({
         storeId: product.store._id,
@@ -29,7 +29,7 @@ const ShoppingCard = ({ order, setOrder }) => {
   const onSubmit = (e) => {
     setLoading(true);
 
-    fetch('http://localhost:3001/api/order/place-order', {
+    fetch('https://react-pharmacy-2.onrender.com/api/order/place-order', {
       method: 'PUT',
       body: JSON.stringify(userInfo),
       headers: {
@@ -42,7 +42,7 @@ const ShoppingCard = ({ order, setOrder }) => {
 
   useEffect(() => {
     setLoading(true)
-    fetch('http://localhost:3001/api/order/draft')
+    fetch('https://react-pharmacy-2.onrender.com/api/order/draft')
       .then(res => res.json())
       .then(setOrder)
       .finally(() => setLoading(false));

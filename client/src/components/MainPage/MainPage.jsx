@@ -13,7 +13,7 @@ const ShopPage = ({ setOrder }) => {
   useEffect(() => {
     setLoading(true);
 
-    fetch('http://localhost:3001/api/store')
+    fetch('https://react-pharmacy-2.onrender.com/api/store')
       .then(res => res.json())
       .then(stores => {
         setDrugStores(stores);
@@ -21,7 +21,7 @@ const ShopPage = ({ setOrder }) => {
       })
       .catch(console.log)
 
-    fetch('http://localhost:3001/api/order/draft')
+    fetch('https://react-pharmacy-2.onrender.com/api/order/draft')
       .then(res => res.json())
       .then(setOrder)
       .finally(() => setLoading(false));
@@ -32,7 +32,7 @@ const ShopPage = ({ setOrder }) => {
     if (!selectedStore) return;
     setLoading(true);
 
-    fetch(`http://localhost:3001/api/store/${selectedStore}`)
+    fetch(`https://react-pharmacy-2.onrender.com/api/store/${selectedStore}`)
       .then(res => res.json())
       .then(([{ drugs }]) => setDrugList(drugs))
       .catch(console.log)
@@ -42,7 +42,7 @@ const ShopPage = ({ setOrder }) => {
   const onAddToCart = useCallback((productId) => {
     setLoading(true);
 
-    fetch('http://localhost:3001/api/order/edit-cart', {
+    fetch('https://react-pharmacy-2.onrender.com/api/order/edit-cart', {
       method: "PATCH",
       body: JSON.stringify({
         storeId: selectedStore,
