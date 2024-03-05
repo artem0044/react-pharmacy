@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-pharmacy/static/css/main.d5d462d8.css",
-    "main.js": "/react-pharmacy/static/js/main.de3efa70.js",
+    "main.css": "/react-pharmacy/static/css/main.10d4be05.css",
+    "main.js": "/react-pharmacy/static/js/main.f2d53cdc.js",
     "static/js/453.419a5d54.chunk.js": "/react-pharmacy/static/js/453.419a5d54.chunk.js",
     "static/media/para2.jpg": "/react-pharmacy/static/media/para2.3930900aaa4846a85cc9.jpg",
     "index.html": "/react-pharmacy/index.html",
-    "main.d5d462d8.css.map": "/react-pharmacy/static/css/main.d5d462d8.css.map",
-    "main.de3efa70.js.map": "/react-pharmacy/static/js/main.de3efa70.js.map",
+    "main.10d4be05.css.map": "/react-pharmacy/static/css/main.10d4be05.css.map",
+    "main.f2d53cdc.js.map": "/react-pharmacy/static/js/main.f2d53cdc.js.map",
     "453.419a5d54.chunk.js.map": "/react-pharmacy/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5d462d8.css",
-    "static/js/main.de3efa70.js"
+    "static/css/main.10d4be05.css",
+    "static/js/main.f2d53cdc.js"
   ]
 }
