@@ -118,7 +118,7 @@ app.patch('/api/order/edit-cart', async (req, res) => {
   }
 
   const updatedOrder = await ordersModel.findOneAndUpdate({ _id: order.id }, { products }, { new: true });
-  console.log(updatedOrder);
+  
   const orderDTO = await getOrderDTO(updatedOrder);
 
   res.json(orderDTO);
