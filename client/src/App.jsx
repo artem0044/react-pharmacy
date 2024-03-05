@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header/Header';
 import Checkout from './components/Checkout/Checkout';
-import MainPage from './components/MainPage/MainPage';
+import MainPage from './components/mainPage/MainPage';
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useState } from 'react';
 

@@ -4,7 +4,7 @@ import Spinner from "../Spinner/Spinner";
 import styles from './MainPage.module.css';
 import { useState, useEffect, useCallback } from "react";
 
-const ShopPage = ({ setOrder }) => {
+const MainPage = ({ setOrder }) => {
   const [drugStores, setDrugStores] = useState([]);
   const [drugsList, setDrugList] = useState([]);
   const [selectedStore, setSelectedStore] = useState(null);
@@ -73,4 +73,4 @@ const ShopPage = ({ setOrder }) => {
   );
 }
 
-export default ShopPage;
+export default MainPage;

@@ -5,12 +5,14 @@ import styles from './Checkout.module.css';
 import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ShoppingCard = ({ order, setOrder }) => {
+const Checkout = ({ order, setOrder }) => {
   const [userInfo, setUserInfo] = useState({});
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const editCart = useCallback((product, count) => {
+    setLoading(true);
+
     fetch('https://react-pharmacy-2.onrender.com/api/order/edit-cart', {
       method: "PATCH",
       body: JSON.stringify({
@@ -24,6 +26,7 @@ const ShoppingCard = ({ order, setOrder }) => {
     })
       .then(res => res.json())
       .then(setOrder)
+      .finally(() => setLoading(false))
   }, []);
 
   const onSubmit = (e) => {
@@ -36,7 +39,7 @@ const ShoppingCard = ({ order, setOrder }) => {
         "Content-type": "application/json"
       }
     })
-    .finally(() => setLoading(false));
+      .finally(() => setLoading(false));
   }
 
 
@@ -48,16 +51,16 @@ const ShoppingCard = ({ order, setOrder }) => {
       .finally(() => setLoading(false));
   }, []);
 
-  useEffect(() => {
-    if (order && !order.products.length) {
-      navigate('/', { replace: true });
-    }
+  // useEffect(() => {
+  //   if (order && !order.products.length) {
+  //     navigate('/', { replace: true });
+  //   }
 
-  }, [order, navigate]);
+  // }, [order, navigate]);
 
 
   return (
-    <form className={styles.shopCard} onSubmit={e => onSubmit(e)}>
+    <form className={styles.shopCard} onSubmit={onSubmit}>
       {loading ?
         <Spinner />
         :
@@ -67,7 +70,7 @@ const ShoppingCard = ({ order, setOrder }) => {
             {order && <ChoosenProductList editCart={editCart} order={order} />}
           </div>
           <div className={styles.result}>
-            <button className={styles.subBut} type="submit">submit</button>
+            <button className={styles.subBut}  type="submit">submit</button>
           </div>
         </>
       }
@@ -75,4 +78,4 @@ const ShoppingCard = ({ order, setOrder }) => {
   );
 }
 
-export default ShoppingCard;
+export default Checkout;
